@@ -1,0 +1,13 @@
+[27-Oct-2020 10:24:12 Asia/Karachi] PHP Fatal error:  Class 'Dompdf\DOMPDF' not found in /home/xqzs2ba09ly5/public_html/pharma.mawaiskhan.com/application/libraries/Pdf.php on line 19
+[27-Oct-2020 10:56:02 Asia/Karachi] PHP Fatal error:  require_once(): Failed opening required '/home/xqzs2ba09ly5/public_html/pharma.mawaiskhan.com/application/libraries/dompdf/autoload.inc.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/xqzs2ba09ly5/public_html/pharma.mawaiskhan.com/application/libraries/Pdf.php on line 4
+[27-Oct-2020 11:00:55 Asia/Karachi] PHP Fatal error:  Class 'Dompdf\DOMPDF' not found in /home/xqzs2ba09ly5/public_html/pharma.mawaiskhan.com/application/libraries/Pdf.php on line 19
+[27-Oct-2020 11:01:25 Asia/Karachi] PHP Fatal error:  Class 'Dompdf\DOMPDF' not found in /home/xqzs2ba09ly5/public_html/pharma.mawaiskhan.com/application/libraries/Pdf.php on line 19
+[27-Oct-2020 11:02:04 Asia/Karachi] PHP Fatal error:  Class 'dompdf\DOMPDF' not found in /home/xqzs2ba09ly5/public_html/pharma.mawaiskhan.com/application/libraries/Pdf.php on line 19
+[27-Oct-2020 11:02:10 Asia/Karachi] PHP Fatal error:  Class 'dompdf\DOMPDF' not found in /home/xqzs2ba09ly5/public_html/pharma.mawaiskhan.com/application/libraries/Pdf.php on line 19
+[27-Oct-2020 11:02:58 Asia/Karachi] PHP Fatal error:  require_once(): Failed opening required '/home/xqzs2ba09ly5/public_html/pharma.mawaiskhan.com/application/libraries/dompdf/autoload.inc.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/xqzs2ba09ly5/public_html/pharma.mawaiskhan.com/application/libraries/Pdf.php on line 4
+[27-Oct-2020 11:03:26 Asia/Karachi] PHP Fatal error:  Class 'Dompdf\DOMPDF' not found in /home/xqzs2ba09ly5/public_html/pharma.mawaiskhan.com/application/libraries/Pdf.php on line 19
+[27-Oct-2020 11:04:13 Asia/Karachi] PHP Fatal error:  Class 'dompdf\DOMPDF' not found in /home/xqzs2ba09ly5/public_html/pharma.mawaiskhan.com/application/libraries/Pdf.php on line 19
+[27-Oct-2020 11:04:56 Asia/Karachi] PHP Fatal error:  Class 'dompdf\DOMPDF' not found in /home/xqzs2ba09ly5/public_html/pharma.mawaiskhan.com/application/libraries/Pdf.php on line 19
+[27-Oct-2020 11:17:16 Asia/Karachi] PHP Fatal error:  Class 'dompdf\DOMPDF' not found in /home/xqzs2ba09ly5/public_html/pharma.mawaiskhan.com/application/libraries/Pdf.php on line 19
+[27-Oct-2020 11:18:45 Asia/Karachi] PHP Fatal error:  Class 'dompdf\DOMPDF' not found in /home/xqzs2ba09ly5/public_html/pharma.mawaiskhan.com/application/libraries/Pdf.php on line 19
+[27-Oct-2020 11:18:50 Asia/Karachi] PHP Fatal error:  Class 'dompdf\DOMPDF' not found in /home/xqzs2ba09ly5/public_html/pharma.mawaiskhan.com/application/libraries/Pdf.php on line 19
