@@ -132,7 +132,7 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
  */
-$autoload['model'] = array('user_model', 'common_model', 'role_model', 'district_model', 'form_type_model', 'institute_model', 'pharmacist_category_model', 'qualification_model', 'form_type_docs_model', 'pharmacist_model', 'proprietor_model', 'apply_model', 'inspection_model', 'province_model', 'tehsil_model', 'banks_model', 'bank_branch_model',
+$autoload['model'] = array('user_model', 'common_model', 'role_model', 'district_model', 'form_type_model', 'institute_model', 'pharmacist_category_model', 'qualification_model', 'form_type_docs_model', 'pharmacist_model', 'proprietor_model', 'inspection_model', 'province_model', 'tehsil_model', 'banks_model', 'bank_branch_model',
 	'form_8a_model',
 	'form_8b_model',
 	'form_8c_model',
