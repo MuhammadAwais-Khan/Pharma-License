@@ -273,7 +273,7 @@ class Form_8c_model extends CI_Model {
 
 		if ($this->db->affected_rows() > 0) {
 			/////////update the tracking id for searching //////
-			$code = str_shuffle($last_insert_id . random_string('alnum', 3));
+			$code = str_shuffle($last_insert_id . random_string('alnum', 4));
 			$tracking_code = '8c-' . $code;
 			$data = array(
 				'tracking_code' => $tracking_code,
@@ -633,7 +633,7 @@ class Form_8c_model extends CI_Model {
 		// $from_date = date('Y-m-d', strtotime($postData['from_date']));
 		// echo $to_date = date('Y-m-d', strtotime($postData['to_date']));
 		// $to_date = date('Y-m-d', strtotime($postData['to_date']));
-		// $to_date = $postData['to_date'];
+		$tracking_code = $postData['tracking_code'];
 		$tbl_district_id = $postData['tbl_district_id'];
 		$status = $postData['status'];
 
@@ -659,6 +659,9 @@ class Form_8c_model extends CI_Model {
 			$search_arr[] = " status like '%" . $status . "%' ";
 		}
 
+		if ($tracking_code != '') {
+			$search_arr[] = " tracking_code like '%" . $tracking_code . "%' ";
+		}
 		if ($tbl_district_id != '') {
 			$search_arr[] = " tbl_district_id like '%" . $tbl_district_id . "%' ";
 		}
@@ -809,6 +812,7 @@ class Form_8c_model extends CI_Model {
 				"receivedDate" => $recordAddDate,
 				"verified" => $is_verify,
 				"status" => $status,
+				"trackingCode" => $record->tracking_code,
 				"action" => $actionBtn,
 			);
 			$i++;

@@ -156,6 +156,7 @@ class Auth extends CI_Controller {
 						'is_user_login' => TRUE,
 					);
 					$this->session->set_userdata($user_data);
+					$this->session->set_flashdata('custom', 'Welcome ' . $_SESSION['name']);
 					redirect('dashboard', 'refresh');
 				} else if ($result == FALSE) {
 					$this->session->set_flashdata('error_msg', 'Invalid Username or Password!');

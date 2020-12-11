@@ -87,6 +87,20 @@
 
             </div>
 
+            <div class="col-md-3">
+              <div class="form-group">
+                  <label><?php echo $label = ucwords('tracking code'); ?>:</label>
+                  <div class="input-group">
+                  <div class="input-group-addon">
+                    <i class="fa fa-code-fork"></i>
+                  </div>
+
+                  <input type="text" autocomplete="off" value="" name="tracking_code" id="tracking_code" class="form-control validate[required,minSize[1]" placeholder="Enter <?php echo $label; ?>" />
+                </div><?php echo form_error('tracking_code'); ?>
+                </div>
+
+            </div>
+
           </div>
           <!-- /.row -->
         </div>
@@ -122,6 +136,7 @@
                   <th width="5%"><?php echo ucwords(str_replace('_', ' ', 'Received date')); ?></th>
                   <th width="5%"><?php echo ucwords(str_replace('_', ' ', 'is qualified person verified?')); ?></th>
                   <th width="4%"><?php echo ucwords(str_replace('_', ' ', 'status')); ?></th>
+                  <th width="4%"><?php echo ucwords(str_replace('_', ' ', 'tracking_code')); ?></th>
                   <th width="3%" class="no-print"><?php echo ucwords(str_replace('_', ' ', 'action')); ?></th>
                 </tr>
                 </thead>
@@ -170,6 +185,7 @@ $(document).ready(function(){
                 data.from_date = $('#from_date').val();
                 data.to_date = $('#to_date').val();
                 data.status = $('#status').val();
+                data.tracking_code = $('#tracking_code').val();
             }
         },
         //Set column definition initialisation properties
@@ -186,6 +202,7 @@ $(document).ready(function(){
             { data: 'receivedDate' },
             { data: 'verified' },
             { data: 'status' },
+            { data: 'trackingCode' },
             { data: 'action' },
           ],
           //Set column definition initialisation properties
@@ -205,6 +222,9 @@ $(document).ready(function(){
       });
 
       $('#to_date').focusout(function(){
+        sspDataTable.draw();
+      });
+      $('#tracking_code').keyup(function(){
         sspDataTable.draw();
       });
 

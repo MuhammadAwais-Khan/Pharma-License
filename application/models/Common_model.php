@@ -166,6 +166,7 @@ class Common_model extends CI_Model {
 
 		$tbl_district_id = $postData['tbl_district_id'];
 		$status = $postData['status'];
+		$tracking_code = $postData['tracking_code'];
 
 		## Search
 		$search_arr = array();
@@ -179,6 +180,9 @@ class Common_model extends CI_Model {
 		}
 		if ($status != '') {
 			$search_arr[] = " status like '%" . $status . "%' ";
+		}
+		if ($tracking_code != '') {
+			$search_arr[] = " tracking_code like '%" . $tracking_code . "%' ";
 		}
 
 		if ($tbl_district_id != '') {
@@ -301,6 +305,7 @@ class Common_model extends CI_Model {
 				"approvalDate" => $approvalDate,
 				"inspector" => $getInspector['name'],
 				"inspectionDate" => $inspectionDate,
+				"trackingCode" => $record->tracking_code,
 				"status" => $status,
 			);
 			$i++;

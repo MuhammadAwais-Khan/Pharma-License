@@ -92,7 +92,7 @@ if ($_SESSION['user_id']) {
                 <th width="5%">Current Date</th>
                 <th width="5%">Pendancy Days</th>
                 <th width="5%">Status</th>
-                <!-- <th width="5%">Total Days of Pendancy</th> -->
+                <th width="5%">Tracking Code</th>
                 <!-- <th width="5%">Reject (DG Drug)</th> -->
               </tr>
             </thead>
@@ -126,6 +126,7 @@ $now = time(); // or your date as well
                 <td><?php echo date('d-m-Y'); ?></td>
                 <td><?php echo $diffDate . ' days'; ?></td>
                 <td><span class="label label-primary">Pending</span></td>
+                <td><?php echo $getRecordsFromFormsInfo['tracking_code']; ?></td>
 
               </tr>
               <?php $i++;}?>
@@ -157,7 +158,7 @@ $now = time(); // or your date as well
                 <th width="5%">Current Date</th>
                 <th width="5%">Pendancy Days</th>
                 <th width="5%">Status</th>
-                <!-- <th width="5%">Total Days of Pendancy</th> -->
+                <th width="5%">Tracking Code</th>
                 <!-- <th width="5%">Reject (DG Drug)</th> -->
 
               </tr>
@@ -199,6 +200,7 @@ $now = time(); // or your date as well
                 <td><?php echo date('d-m-Y'); ?></td>
                 <td><?php echo $diffDate . ' days'; ?></td>
                 <td><span class="label label-primary">Pending</span></td>
+                <td><?php echo $getInspectionInfo['tracking_code']; ?></td>
 
               </tr>
               <?php $i++;}?>
@@ -296,7 +298,55 @@ $now = time(); // or your date as well
 </script>
 
 <script type="text/javascript">
+  var sspDataTable;
     $(document).ready(function() {
+          sspDataTable=$('#tablePrint_bb').DataTable({
+        // Processing indicator
+        "processing": true,
+        // DataTables server-side processing mode
+        "serverSide": true,
+        "serverMethod": "post",
+
+        // Initial no order.
+        "order": [],
+        "filter": false,
+        "searching": false,
+
+        // Load data from an Ajax source
+        "ajax": {
+            "url": "<?php echo base_url('form_8a/get_form_8a/'); ?>",
+            // "type": "POST"
+            'data': function(data){
+                data.tbl_district_id = $('#tbl_district_id').val();
+                data.from_date = $('#from_date').val();
+                data.to_date = $('#to_date').val();
+                data.status = $('#status').val();
+                data.tracking_code = $('#tracking_code').val();
+            }
+        },
+        //Set column definition initialisation properties
+        // "columnDefs": [{
+        //     "targets": [0,5,6],
+        //     "orderable": false
+        // }]
+        'columns': [
+            { data: 'no' },
+            { data: 'proprietor' },
+            { data: 'qualifiedPerson' },
+            { data: 'qualifiedPersonCountry' },
+            { data: 'proprietorProvince' },
+            { data: 'receivedDate' },
+            { data: 'verified' },
+            { data: 'status' },
+            { data: 'trackingCode' },
+            { data: 'action' },
+          ],
+          //Set column definition initialisation properties
+        "columnDefs": [{
+            "targets": [0,1,2,3,4,5,6,7,8],
+            "orderable": false
+        }]
+    });
 
     $('#tablePrint_b').DataTable({
 

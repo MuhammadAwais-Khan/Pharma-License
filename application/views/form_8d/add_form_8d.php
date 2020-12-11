@@ -109,7 +109,7 @@
                   <div class="input-group">
 
 
-                  <input type="text" autocomplete="off" value="<?php echo set_value('reg_no'); ?>" name="reg_no" id="reg_no" class="form-control validate[required,minSize[3]" placeholder="Enter <?php echo $label; ?>" />
+                  <input type="text" onchange="pharmacist()" autocomplete="off" value="<?php echo set_value('reg_no'); ?>" name="reg_no" id="reg_no" class="form-control validate[required,minSize[3]" placeholder="Enter <?php echo $label; ?>" />
 
                   <div class="input-group-addon" style="padding: 0 4px;" >
               <button type="button" onclick="pharmacist()" class="btn btn-block btn-success btn-sm">
