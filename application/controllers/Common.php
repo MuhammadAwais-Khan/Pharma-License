@@ -9,6 +9,7 @@ class Common extends MY_Controller {
 		parent::__construct();
 
 	}
+
 	// tbl_name_id is ID
 	public function pendency_report() {
 		$data['page_title'] = 'Pendency Report';
@@ -17,6 +18,16 @@ class Common extends MY_Controller {
 		$this->load->view('templates/header', $data);
 		$this->load->view('print/pendency_report', $data);
 		$this->load->view('templates/footer');
+	}
+	public function dg_drug_pendency_report() {
+		$postData = $this->input->post();
+		$data = $this->common_model->dg_drug_pendency_report($postData);
+		echo json_encode($data);
+	}
+	public function inspector_pendency_report() {
+		$postData = $this->input->post();
+		$data = $this->common_model->inspector_pendency_report($postData);
+		echo json_encode($data);
 	}
 
 	public function form_reports() {

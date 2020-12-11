@@ -298,55 +298,7 @@ $now = time(); // or your date as well
 </script>
 
 <script type="text/javascript">
-  var sspDataTable;
     $(document).ready(function() {
-          sspDataTable=$('#tablePrint_bb').DataTable({
-        // Processing indicator
-        "processing": true,
-        // DataTables server-side processing mode
-        "serverSide": true,
-        "serverMethod": "post",
-
-        // Initial no order.
-        "order": [],
-        "filter": false,
-        "searching": false,
-
-        // Load data from an Ajax source
-        "ajax": {
-            "url": "<?php echo base_url('form_8a/get_form_8a/'); ?>",
-            // "type": "POST"
-            'data': function(data){
-                data.tbl_district_id = $('#tbl_district_id').val();
-                data.from_date = $('#from_date').val();
-                data.to_date = $('#to_date').val();
-                data.status = $('#status').val();
-                data.tracking_code = $('#tracking_code').val();
-            }
-        },
-        //Set column definition initialisation properties
-        // "columnDefs": [{
-        //     "targets": [0,5,6],
-        //     "orderable": false
-        // }]
-        'columns': [
-            { data: 'no' },
-            { data: 'proprietor' },
-            { data: 'qualifiedPerson' },
-            { data: 'qualifiedPersonCountry' },
-            { data: 'proprietorProvince' },
-            { data: 'receivedDate' },
-            { data: 'verified' },
-            { data: 'status' },
-            { data: 'trackingCode' },
-            { data: 'action' },
-          ],
-          //Set column definition initialisation properties
-        "columnDefs": [{
-            "targets": [0,1,2,3,4,5,6,7,8],
-            "orderable": false
-        }]
-    });
 
     $('#tablePrint_b').DataTable({
 
