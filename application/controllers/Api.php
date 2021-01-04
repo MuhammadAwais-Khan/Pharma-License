@@ -7,6 +7,7 @@ use \Firebase\JWT\JWT;
 class Api extends \Restserver\Libraries\REST_Controller {
 	public function __construct() {
 		parent::__construct();
+		error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
 		$this->load->model('api_model');
 	}
 	/**
@@ -66,12 +67,21 @@ class Api extends \Restserver\Libraries\REST_Controller {
 	}
 
 	//  get all inspections
-	public function all_inspection_get($id = 0) {
-		// $inspector_id = '';
-		// if (@$_GET['inspector_id']) {
-		// 	$inspector_id = $_GET['inspector_id'];
-		// }
-		$inspector_id = $id;
+	// public function all_inspection_get() {
+	// 	$token = $this->input->get_request_header('Authorization');
+	// 	$jwt = str_replace('Bearer ', '', $token);
+	// 	$decoded = JWT::decode($jwt, 'JWT_KEY', ['HS256']);
+	// 	print_r(json_encode($decoded));
+	// 	exit;
+	// }
+
+	//  get all inspections
+	public function all_inspection_get() {
+
+		if (@$_GET['user_id']) {
+			$user_id = $_GET['user_id'];
+		}
+		$inspector_id = $user_id;
 
 		$response["data"] = array();
 		// $sources = $this->api_model->fetch_all('tbl_inspection');
@@ -110,15 +120,14 @@ class Api extends \Restserver\Libraries\REST_Controller {
 	}
 
 	//  inspection by id
-	public function inspection_get($id = 0) {
-		// $inspector_id = '';
-		// if (@$_GET['inspector_id']) {
-		// 	$inspector_id = $_GET['inspector_id'];
-		// }
-		// $inspector_id = $id;
+	public function inspection_get() {
+
+		if (@$_GET['inspection_id']) {
+			$inspection_id = $_GET['inspection_id'];
+		}
+		$id = $inspection_id;
 
 		$response["data"] = array();
-		// $sources = $this->api_model->fetch_all('tbl_inspection');
 		$sources = $this->api_model->read_conditionally('tbl_inspection', $id, 'id');
 		if (!empty($sources)) {
 			foreach ($sources as $row) {
@@ -253,7 +262,7 @@ class Api extends \Restserver\Libraries\REST_Controller {
 			} // end foreach
 
 			if ($res = $this->api_model->update_inspections($shop_img)) {
-				$response['message'] = 'key update  successfuly';
+				$response['message'] = 'update successfuly';
 				$response['success'] = 200;
 				echo json_encode($response);
 			}

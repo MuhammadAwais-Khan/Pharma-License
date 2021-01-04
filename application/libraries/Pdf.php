@@ -5,6 +5,9 @@ require_once dirname(__FILE__) . '/dompdf/autoload.inc.php';
 
 class Pdf {
 	function createPDF($html, $filename = '', $download = TRUE, $paper = 'A4', $orientation = 'portrait') {
+// Disable DOMPDF's internal autoloader if you are using Composer
+		define('DOMPDF_ENABLE_AUTOLOAD', false);
+		// require_once CONFIG_DIR . 'vendor/dompdf/dompdf/dompdf_config.inc.php';
 
 		// Load dompdf and create object
 		require_once 'dompdf/autoload.inc.php';

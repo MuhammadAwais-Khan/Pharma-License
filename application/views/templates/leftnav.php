@@ -41,7 +41,7 @@ if ($_SESSION['user_id']) {
 
         <!-- <a href="<?php echo base_url('user/edit_user/' . safe_encode(safe_encode($user_detail['id']))); ?>"><i class="fa fa-user"></i> Your Profile</a> -->
 
-        <a href="<?php echo base_url('user/edit_user/' . safe_encode($user_detail['id'])); ?>"><i class="fa fa-user"></i> Your Profile</a>
+        <a href="<?php echo base_url('user/edit_user/' . safe_encode($user_detail['id'])); ?>"><i class="fa fa-user"></i> <span>Your Profile</span></a>
       </li>
       <?php if ($_SESSION['tbl_role_id'] == 1) {?>
 
